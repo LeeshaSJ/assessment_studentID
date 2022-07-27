@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.text.Editable
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -56,13 +57,13 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
 
     // below method is to get all data from the database
-    fun getName(): Cursor? {
+    fun getPrice(brand: String, model: String): Cursor? {
 
         // readable variable of the database to read value from it
         val db = this.readableDatabase
 
         // This code returns a cursor to read data from the database
-        return db.rawQuery("SELECT * FROM " + TABLE_NAME, null)
+        return db.rawQuery("SELECT price FROM " + TABLE_NAME+ "WHERE brand ="+brand +" AND model = "+model, null)
 
     }
 
