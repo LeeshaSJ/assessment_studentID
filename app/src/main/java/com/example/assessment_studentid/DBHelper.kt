@@ -63,7 +63,6 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
         // This code returns a cursor to read data from the database
         return db.rawQuery("SELECT price FROM $TABLE_NAME WHERE brand = '$brand' AND model = '$model'", null)
-
     }
 
     companion object {

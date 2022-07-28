@@ -32,7 +32,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="20px"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +73,8 @@
             android:layout_height="50sp"
             android:background="@color/white"
             android:ems="10"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
             android:inputType="textPersonName"
             app:layout_constraintStart_toEndOf="@id/lblCarBrand"
             app:layout_constraintTop_toTopOf="@id/lblCarBrand" />
@@ -83,6 +85,8 @@
             android:layout_height="50sp"
             android:background="@color/white"
             android:ems="10"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
             android:inputType="textPersonName"
             app:layout_constraintStart_toEndOf="@id/lblCarModel"
             app:layout_constraintTop_toTopOf="@id/lblCarModel" />
@@ -93,6 +97,8 @@
             android:layout_height="50sp"
             android:background="@color/white"
             android:ems="10"
+            android:paddingStart="20sp"
+            android:paddingEnd="20sp"
             android:inputType="textPersonName"
             app:layout_constraintStart_toEndOf="@id/lblCarPrice"
             app:layout_constraintTop_toTopOf="@id/lblCarPrice" />
@@ -103,6 +109,7 @@
             android:layout_height="70sp"
             android:layout_marginTop="16dp"
             android:text="Add Car"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
