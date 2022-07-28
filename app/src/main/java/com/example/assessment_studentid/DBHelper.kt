@@ -5,7 +5,6 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.text.Editable
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -27,7 +26,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     override fun onUpgrade(db: SQLiteDatabase, p1: Int, p2: Int) {
         // this method is to check if table already exists
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME)
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
     }
 
@@ -63,22 +62,22 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val db = this.readableDatabase
 
         // This code returns a cursor to read data from the database
-        return db.rawQuery("SELECT price FROM " + TABLE_NAME+ "WHERE brand ="+brand +" AND model = "+model, null)
+        return db.rawQuery("SELECT price FROM $TABLE_NAME WHERE brand = '$brand' AND model = '$model'", null)
 
     }
 
     companion object {
         // variables for the database
         // THis is variable for database name
-        private val DATABASE_NAME = "garage"
+        private const val DATABASE_NAME = "garage"
 
         // This is the variable for database version
-        private val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 1
 
-        val TABLE_NAME = "car"
-        val COLUMN_1 = "brand"
-        val COLUMN_2 = "model"
-        val COLUMN_3 = "price"
+        const val TABLE_NAME = "car"
+        const val COLUMN_1 = "brand"
+        const val COLUMN_2 = "model"
+        const val COLUMN_3 = "price"
     }
 }
 
